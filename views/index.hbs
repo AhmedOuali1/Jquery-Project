@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" >
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery-Project-Ahmed-Firas</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<section class="content">
+			<div class="col-md-9">
+			    <h1>Gestion-Etudiant-Jquery</h1>
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="pull-right">
+							<div class="btn-group">
+								<button type="button" class="btn btn-success btn-filter" data-toggle="modal" data-target="#squarespaceModal">Creer</button>
+								<button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Modifier</button>
+								<button type="button" class="btn btn-danger btn-filter" id="delete" data-target="cancelado">Supprimer</button>
+								<button type="button" class="btn btn-default btn-filter" data-target="all">Todos</button>
+							</div>
+						</div>
+						<div class="table-container">
+							<table class="table table-filter">
+								<tbody id="table">
+								    
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="content-footer">
+					<p>
+						Ahmed Ouali <br>
+						Firas Jegham
+					</p>
+					<button type="button" id="start" class="btn btn-default btn-filter" data-target="all">Lancer la requête ajax (Recuperer les etudiant depuis la BD)</button>
+				</div>
+			</div>
+			
+			{{!--begin-notifs--}}
+			<div class="col-md-3">
+			    <div class="container">
+			        <br/>
+                    <div class="notice notice-success"  style="display:none">
+                    </div>
+                    <div class="notice notice-danger"  style="display:none">
+                    </div>
+                </div>
+			</div> 
+			{{!--end-notifs--}}
+		</section>
+	</div>
+</div>
+
+{{!--Model-creer--}}
+
+
+<!-- line modal -->
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title" id="lineModalLabel">My Modal</h3>
+		</div>
+		<div class="modal-body">
+			
+            <!-- content goes here -->
+			<form>
+			  <div class="form-group">
+                <label for="exampleInputEmail1">Nom</label>
+                <input type="text" class="form-control" id="firstName" placeholder="FirstName">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Prénom</label>
+                <input type="text" class="form-control" id="lastName" placeholder="LastName">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Description</label>
+                <input type="text" class="form-control" id="intro" placeholder="Description">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="mail" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Departement</label>
+                <input type="text" class="form-control" id="Departement" placeholder="Departement">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Phone</label>
+                <input type="text" class="form-control" id="Phone" placeholder="Phone">
+              </div>
+              
+              
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Favoris
+                </label>
+              </div>
+              
+            </form>
+
+		</div>
+		<div class="modal-footer">
+			<div class="btn-group btn-group-justified" role="group" aria-label="group button">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
+				</div>
+				<div class="btn-group btn-delete hidden" role="group">
+					<button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button type="button" id="save" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
+				</div>
+			</div>
+		</div>
+		</form>
+	</div>
+  </div>
+</div>
+
+{{!--fin model--}}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/javascripts/scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+{{!--<h1>{{title}}</h1>--}}
+{{!--<p>Welcome to {{title}}</p>--}}
